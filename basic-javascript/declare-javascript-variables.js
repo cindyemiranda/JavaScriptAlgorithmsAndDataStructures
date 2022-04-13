@@ -108,3 +108,47 @@ c -= 1;
 a *= 5;
 b *=3;
 c *=10;
+/** Compound Assignment With Augmented Division */
+
+a /= 12;
+b /= 4;
+c /= 11;
+
+/**Escaping Literal Quotes in Strings */
+const myStr = "I am a \"double quoted\" string inside \"double quotes\"."; // Change this line
+
+/**Quoting Strings with Single Quotes */
+const myStr2 = '<a href="http://www.example.com" target="_blank">Link</a>';
+
+/**Escape Sequences in Strings */
+const myStr3 = "FirstLine\n\t\\SecondLine\nThirdLine"; // Change this line
+
+/**Concatenating Strings with Plus Operator */
+const myStr4 = "This is the start. "+"This is the end."; // Change this line
+
+/**Concatenating Strings with the Plus Equals Operator */
+let myStr5 = "This is the first sentence. ";
+myStr5 += "This is the second sentence."
+
+/**Constructing Strings with Variables */
+const myName = "Cindy";
+const myStr6 = "Hello, I am "+myName+". Nice to meet you!";
+
+/**Appending Variables to Strings */
+const someAdjective = "amazing";
+let myStr7 = "Learning to code is ";
+myStr7 += someAdjective;
+
+/**Find the Length of a String */
+let lastNameLength = 0;
+const lastName = "Lovelace";
+
+// Only change code below this line
+lastNameLength = lastName.length;
+
+/**Use Bracket Notation to Find the First Character in a String */
+let firstLetterOfLastName = "";
+const lastName1 = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName1[0]; // Change this line
