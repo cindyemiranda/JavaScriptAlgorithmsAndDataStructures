@@ -152,3 +152,61 @@ const lastName1 = "Lovelace";
 
 // Only change code below this line
 firstLetterOfLastName = lastName1[0]; // Change this line
+
+/**Use Bracket Notation to Find the Nth Character in a String*/
+const thirdLetterOfLastName = lastName[2]; // Change this line
+
+/**Use Bracket Notation to Find the Last Character in a String */
+const lastLetterOfLastName = lastName[lastName.length-1]; // Change this line
+
+/**Use Bracket Notation to Find the Nth-to-Last Character in a String */
+const secondToLastLetterOfLastName = lastName[lastName.length - 2]; // Change this line
+
+/**Word Blanks */
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+const wordBlanks = "The "+myAdjective+" "+myNoun+" "+myVerb+" "+myAdverb; // Change this line
+
+/**Store Multiple Values in one Variable using JavaScript Arrays */
+const myArray = ["One string", 89];
+
+/**Nest one Array within Another Array */
+const myArray1 = [["One string", 33],["Two strings", 55]];
+
+/**Access Array Data with Indexes */
+const myArray3 = [50, 60, 70];
+const myData= myArray[0];
+
+/**Modify Array Data With Indexes */
+const myArray4 = [18, 64, 99];
+// Only change code below this line
+myArray4[0] = 45;
+
+/**Access Multi-Dimensional Arrays With Indexes */
+const myArray5 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14],
+  ];
+  
+  const myData1 = myArray5[2][1];
+
+/**Manipulate Arrays With push() */
+const myArray6 = [["John", 23], ["cat", 2]];
+myArray6.push(["dog",3]);
+
+/**Manipulate Arrays With pop() */
+const myArray7 = [["John", 23], ["cat", 2]];
+const removedFromMyArray=myArray7.pop();
+
+/**Manipulate Arrays With shift() */
+const myArray8 = [["John", 23], ["dog", 3]];
+const removedFromMyArray1 = myArray8.shift();
+
+/**Manipulate Arrays With unshift() */
+const myArray9 = [["John", 23], ["dog", 3]];
+myArray9.shift();
+myArray9.unshift(["Paul", 35]);
