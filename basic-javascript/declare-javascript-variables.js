@@ -210,3 +210,111 @@ const removedFromMyArray1 = myArray8.shift();
 const myArray9 = [["John", 23], ["dog", 3]];
 myArray9.shift();
 myArray9.unshift(["Paul", 35]);
+
+/**Shopping List */
+const myList = [];
+myList.push(["Milk",4]);
+myList.push(["Rice",2]);
+myList.push(["Apple",5]);
+myList.push(["Bread",10]);
+myList.push(["Bananas",44]);
+
+/**Write Reusable JavaScript with Functions */
+function reusableFunction(){
+    console.log("Hi World");
+}
+reusableFunction();
+
+/**Passing Values to Functions with Arguments */
+function functionWithArgs(num1, num2){
+    console.log(num1+num2)
+}
+ functionWithArgs(43,45);
+
+/**Return a Value from a Function with Return */
+function timesFive(num){
+  return num*5;
+}
+const answer= timesFive(11);
+
+/**Global Scope and Functions */
+// Declare the myGlobal variable below this line
+let myGlobal=10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal=5;
+}
+
+// Only change code above this line
+
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+/**Local Scope and Functions */
+function myLocalScope() {
+// Only change code below this line
+   const myVar="red";
+   console.log('inside myLocalScope', myVar);
+ }
+ myLocalScope();
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+
+/**Global vs. Local Scope in Functions */
+const outerWear = "T-Shirt";
+function myOutfit() {
+  // Only change code below this line
+  const outerWear="sweater";
+  // Only change code above this line
+  return outerWear;
+}
+myOutfit();
+
+/**Understanding Undefined Value returned from a Function */
+let sum1 = 0;
+function addThree() {
+  sum1 = sum1 + 3;
+}
+// Only change code below this line
+function addFive(){
+  sum1=sum1+5;
+}
+// Only change code above this line
+addThree();
+addFive();
+
+/**Assignment with a Returned Value */
+let processed = 0;
+function processArg(num) {
+  return (num + 3) / 5;
+}
+// Only change code below this line
+processed=processArg(7);
+
+/**Stand in Line*/
+function nextInLine(arr, item) {
+// Only change code below this line
+arr.push(item);
+item=arr[0];
+arr.shift();
+return item;
+// Only change code above this line
+}
+
+// Setup
+const testArr = [1, 2, 3, 4, 5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
