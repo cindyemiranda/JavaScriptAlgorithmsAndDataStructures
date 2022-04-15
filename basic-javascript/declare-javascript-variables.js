@@ -58,7 +58,7 @@ let catSound = "Meow!";
 const FCC = "freeCodeCamp"; // Change this line
 let fact = "is cool!"; // Change this line
 fact = "is awesome!";
-console.log(FCC, fact); // Change this line
+//console.log(FCC, fact); // Change this line
 
 /**Add Two Numbers with JavaScript */
 const sum = 10 + 10;
@@ -221,13 +221,13 @@ myList.push(["Bananas",44]);
 
 /**Write Reusable JavaScript with Functions */
 function reusableFunction(){
-    console.log("Hi World");
+    //console.log("Hi World");
 }
 reusableFunction();
 
 /**Passing Values to Functions with Arguments */
 function functionWithArgs(num1, num2){
-    console.log(num1+num2)
+    //console.log(num1+num2)
 }
  functionWithArgs(43,45);
 
@@ -256,19 +256,19 @@ function fun2() {
   if (typeof oopsGlobal != "undefined") {
     output += " oopsGlobal: " + oopsGlobal;
   }
-  console.log(output);
+  //console.log(output);
 }
 
 /**Local Scope and Functions */
 function myLocalScope() {
 // Only change code below this line
    const myVar="red";
-   console.log('inside myLocalScope', myVar);
+   //console.log('inside myLocalScope', myVar);
  }
  myLocalScope();
 // Run and check the console
 // myVar is not defined outside of myLocalScope
-console.log('outside myLocalScope', myVar);
+//console.log('outside myLocalScope', myVar);
 
 /**Global vs. Local Scope in Functions */
 const outerWear = "T-Shirt";
@@ -313,9 +313,9 @@ return item;
 // Setup
 const testArr = [1, 2, 3, 4, 5];
 // Display code
-console.log("Before: " + JSON.stringify(testArr));
-console.log(nextInLine(testArr, 6));
-console.log("After: " + JSON.stringify(testArr));
+//console.log("Before: " + JSON.stringify(testArr));
+//console.log(nextInLine(testArr, 6));
+//console.log("After: " + JSON.stringify(testArr));
 
 /**Understanding Boolean Values */
 function welcomeToBooleans() {
@@ -880,3 +880,300 @@ const myMusic = [
     "formats":["CD", "LP"]
   }
 ];
+
+/**Accessing Nested Objects */
+const myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+/**Accessing Nested Arrays */
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+/**Record collection */
+// Setup
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+// Only change code below this line
+function updateRecords(records, id, prop, value) {
+  if(prop!=="tracks"){
+     if(value!==""){
+       records[id][prop]=value;
+     } 
+     else{
+       delete(records[id][prop]);
+     }
+  }
+  else if(prop === "tracks"){
+    if(!records[id].hasOwnProperty("tracks")){
+      records[id][prop]=[value];
+    }
+    else if(value!==""){
+      records[id][prop].push(value);
+    }
+    else{
+      delete(records[id][prop]);
+    }
+  }
+  
+  console.log(records);
+  return records;
+}
+
+updateRecords(recordCollection, 2548, "artist", "");
+/**Iterate with JavaScript While Loops */
+const myArray2 = [];
+
+// Only change code below this line
+let i=5;
+while (i>=0){
+  myArray2.push(i);
+  i--;
+}
+
+/**Iterate with JavaScript For Loops */
+// Setup
+const myArray4 = [];
+
+// Only change code below this line
+for(let i=1; i<=5; i++){
+  myArray4.push(i);
+}
+/**Iterate Odd Numbers With a For Loop */
+// Setup
+const myArray10= [];
+
+// Only change code below this line
+for(let i=1; i<=9; i+=2){
+  myArray10.push(i);
+}
+
+/**Count Backwards With a For Loop */
+// Setup
+const myArray11 = [];
+
+// Only change code below this line
+for(let i=9; i>=1; i-=2){
+  myArray11.push(i);
+}
+/**Iterate Through an Array with a For Loop */
+// Setup
+const myArr = [2, 3, 4, 5, 6];
+
+// Only change code below this line
+let total=0;
+for(let i=0; i<myArr.length; i++){
+  total+=myArr[i];
+}
+
+/**Nesting For Loops */
+function multiplyAll(arr) {
+  let product = 1;
+  // Only change code below this line
+  for(let i=0; i<arr.length; i++){
+    for(let j=0; j<arr[i].length; j++){
+      product*=arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+/**Iterate with JavaScript Do...While Loops */
+// Setup
+const myArray12 = [];
+let i1 = 10;
+
+// Only change code below this line
+do{
+  myArray.push(i1);
+  i1++;
+}while (i1 < 5);
+
+/**Replace Loops using Recursion */
+function sum(arr, n) {
+  // Only change code below this line
+  if(n<=0){
+    return 0;
+  }
+  else{
+    return sum(arr, n-1)+arr[n-1];
+  }
+  // Only change code above this line
+}
+
+/**Profile Lookup */
+const contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
+
+function lookUpProfile(name, prop) {
+  
+   let value="No such contact";
+   for(let i=0; i<contacts.length; i++){
+     if(contacts[i].firstName===name){
+       if(contacts[i].hasOwnProperty(prop)){
+         value=contacts[i][prop];
+         return value;
+       }
+       else{
+         value="No such property";
+         return value;
+       }
+     }
+
+   } 
+   return value;
+  // Only change code above this line
+}
+
+lookUpProfile("Akira", "likes");
+
+/**Generate Random Fractions with JavaScript */
+function randomFraction() {
+  // Only change code below this line
+  return Math.random();
+  // Only change code above this line
+}
+
+/**Generate Random Whole Numbers with JavaScript */
+function randomWholeNum() {
+  // Only change code below this line
+   return Math.floor(Math.random()*10);
+}
+
+/**Generate Random Whole Numbers within a Range */
+function randomRange(myMin, myMax) {
+  // Only change code below this line
+  return Math.floor(Math.random()*(myMax-myMin +1))+ myMin;
+  // Only change code above this line
+}
+
+/**Use the parseInt Function */
+function convertToInteger(str) {
+  return parseInt(str);
+}
+
+convertToInteger("56");
+
+/**Use the parseInt Function with a Radix */
+function convertToIntegerWRadix(str) {
+  return parseInt(str,2);
+}
+
+convertToIntegerWRadix("10011");
+
+/**Use the Conditional (Ternary) Operator */
+function checkEqual(a, b) {
+  return a==b?"Equal":"Not Equal";
+}
+
+checkEqual(1, 2);
+
+/**Use Multiple Conditional (Ternary) Operators */
+function checkSign(num) {
+  return num>0?"positive":
+        num==0?"zero":
+        "negative";
+}
+
+checkSign(10);
+
+/**Use Recursion to Create a Countdown */
+// Only change code below this line
+function countdown(n){
+  if(n<1){
+    return [];
+  }else{
+    const countArray=countdown(n-1);
+    countArray.unshift(n);
+    //console.log(countArray);
+    return countArray;
+  }
+}
+console.log(countdown(10));
+// Only change code above this line
+
+/**Use Recursion to Create a Range of Numbers */
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum>endNum){
+    return[];
+  }
+  else{
+    const countArray=rangeOfNumbers(startNum +1, endNum);
+    countArray.unshift(startNum);
+    return countArray;
+  }
+};
+
+console.log(rangeOfNumbers(4,4));
