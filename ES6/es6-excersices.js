@@ -92,6 +92,20 @@ const HIGH_TEMPERATURES1 = {
 // Only change code below this line
   
 const {today: highToday, tomorrow: highTomorrow}=HIGH_TEMPERATURES1;
-
-
 // Only change code above this line
+
+/**Use Destructuring Assignment to Assign Variables from Nested Objects */
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// Only change code below this line
+const{today:{low:lowToday, high:highToday1}}=LOCAL_FORECAST;  
+// Only change code above this line
+
+/**Use Destructuring Assignment to Assign Variables from Arrays */
+let a = 8, b = 6;
+// Only change code below this line
+[a,b]=[b,a];
