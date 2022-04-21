@@ -233,3 +233,50 @@ subtract(7,4);
 
 /**Create a JavaScript Promise */
 const makeServerRequest= new Promise((resolve,reject)=>{});
+
+/**Complete a Promise with resolve and reject */
+const makeServerRequest1 = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    resolve("We got the data");// Change this line
+  } else {  
+    reject("Data not received");// Change this line
+  }
+});
+
+/**Handle a Fulfilled Promise with then */
+const makeServerRequest2 = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+makeServerRequest2.then(result=>{
+    console.log(result);
+});
+
+/**Handle a Rejected Promise with catch */
+const makeServerRequest3 = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest3.then(result => {
+  console.log(result);
+});
+
+makeServerRequest3.catch(error =>{
+  console.log(error);
+});
