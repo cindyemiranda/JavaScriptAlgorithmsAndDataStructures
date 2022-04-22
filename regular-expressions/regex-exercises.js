@@ -122,4 +122,30 @@
    let lastRegex = /caboose$/; // Change this line
    let result = lastRegex.test(caboose);
 
-   
+   /**
+    * Match All Letters and Numbers
+    */
+   let quoteSample4 = "The five boxing wizards jump quickly.";
+   let alphabetRegexV2 = /\w/g; // Change this line
+   let result = quoteSample.match(alphabetRegexV2).length;
+
+   /**
+    * Match Everything But Letters and Numbers
+    */
+   let quoteSample5 = "The five boxing wizards jump quickly.";
+   let nonAlphabetRegex = /\W/g; // Change this line
+   let result = quoteSample.match(nonAlphabetRegex).length;
+
+   /**
+    * Match All Numbers
+    */
+   let movieName = "2001: A Space Odyssey";
+   let numRegex = /\d/g; // Change this line
+   let result = movieName.match(numRegex).length;
+
+   /**
+    * Match All Non-Numbers
+    */
+   let movieName1 = "2001: A Space Odyssey";
+   let noNumRegex = /\D/g; // Change this line
+   let result = movieName.match(noNumRegex).length;
