@@ -74,3 +74,52 @@
      let quoteSample3 = "3 blind mice.";
      let myRegex3 = /[^aeiou^0-9]/gi; // Change this line
      let result = quoteSample.match(myRegex); // Change this line
+
+
+   /**
+   * Match Characters that Occur One or More Times
+   */
+   let difficultSpelling = "Mississippi";
+   let myRegex1 = /s+/g; // Change this line
+   let result = difficultSpelling.match(myRegex1);
+
+   /**
+    * Match Characters that Occur Zero or More Times
+    */
+   // Only change code below this line
+   let chewieRegex = /Aa*/; // Change this line
+   // Only change code above this line
+
+   let result = chewieQuote.match(chewieRegex);
+
+   /**
+    * Find Characters with Lazy Matching
+    */
+    let text = "<h1>Winter is coming</h1>";
+    let myRegex4 = /<[h]*?1>/; // Change this line
+    let result = text.match(myRegex4);
+
+    /**
+     * Find One or More Criminals in a Hunt
+     */
+     let reCriminals = /C+/; // Change this line
+     /*
+     const text="CC"
+     console.log(text.match(reCriminals));
+     */
+
+     /**
+      * Match Beginning String Patterns
+      */
+      let rickyAndCal = "Cal and Ricky both like racing.";
+      let calRegex = /^Cal/; // Change this line
+      let result = calRegex.test(rickyAndCal);
+
+      /**
+       * Match Ending String Patterns
+       */
+   let caboose = "The last car on a train is the caboose";
+   let lastRegex = /caboose$/; // Change this line
+   let result = lastRegex.test(caboose);
+
+   
