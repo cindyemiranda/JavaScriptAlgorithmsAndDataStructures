@@ -148,4 +148,22 @@ console.log(filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18));
     // Only change code above this line
   ];
 
+/**
+ * Add Key-Value Pairs to JavaScript Objects
+ */
+let foods = {
+apples: 25,
+oranges: 32,
+plums: 28
+};
+
+// Only change code below this line
+foods.bananas=13;
+foods.grapes=35;
+foods.strawberries=27;
+// Only change code above this line
+
+console.log(foods);
+
+
 
