@@ -64,3 +64,69 @@ reverseString("hello");
   
   findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
+  /**
+   * Return Largest Numbers in Arrays
+   */
+   function largestOfFour(arr) {
+    let newArr=[];
+    for(let i=0; i<arr.length; i++){
+      let max=arr[i][0];
+      for(let j=0; j<arr[i].length; j++){
+        if(arr[i][j]>=max){
+          max=arr[i][j];
+        }
+      }
+      newArr.push(max);
+    }
+    return newArr;
+  }
+  
+  largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+
+  /**
+   * Confirm the Ending
+   */
+   function confirmEnding(str, target) {
+    let endStr=str.substring((str.length-target.length), str.length);
+    //console.log(endStr);
+    return (endStr===target);
+  }
+  
+  confirmEnding("Bastian", "n");
+
+  /**
+   * Repeat a String Repeat a String
+   */
+   function repeatStringNumTimes(str, num) {
+    let newStr=str;
+    if(num>0){
+      for(let i=0; i<num-1; i++){
+       str=str+newStr;
+      }
+    }
+    else{
+      str="";
+    }
+    
+    //console.log(str);
+    return str;
+  }
+  
+  repeatStringNumTimes("abc", 3);
+
+  /**
+   * Truncate a String
+   */
+   function truncateString(str, num) {
+    if(num>=str.length){
+      return str;
+    }
+    else{
+      let newArray= str.substring(0, num);
+      newArray=newArray+"...";
+     //console.log(newArray);
+      return newArray;
+    }
+  }
+  
+  truncateString("A-tisket a-tasket A green and yellow basket", 8);
