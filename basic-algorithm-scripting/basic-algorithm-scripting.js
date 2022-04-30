@@ -211,3 +211,101 @@ function bouncer(arr) {
    return arr.filter(Boolean);
 }
 bouncer([false, null, 0, NaN, undefined, ""]);
+
+/**
+ * Where do I Belong
+ */
+ function getIndexToIns(arr, num) {
+  arr=arr.sort(function (a, b) {  return a - b;  });;
+  console.log(arr);
+  let idx=0;
+  for(let i=0; i<arr.length; i++){
+    if(num<=arr[i]){
+        if(i>0){
+          if((num-arr[i-1])<(arr[i]-num)){
+            idx=i-1;
+            break;
+          }
+          else{
+            idx=i;
+            break;
+          }
+        }
+        else{
+          if((num-arr[i])<(arr[i+1]-num)){
+            idx=i;
+            break;
+          }
+          else{
+            idx=i+1;
+            break;
+          }
+        }
+    }
+    else{
+      if(i==arr.length-1){
+        idx=arr.length;
+      }
+    }
+  }
+  console.log(idx);
+  return idx;
+}
+
+getIndexToIns([2, 5, 10], 15);
+
+/**
+ * Mutations
+ */
+ function mutation(arr) {
+  let str1= arr[0];
+  let str2= arr[1];
+  let contains=true;
+  for(let i=0; i<str2.length; i++){
+    contains=false;
+    let char2=str2.charAt(i);
+    char2=char2.toLowerCase();
+    for(let j=0; j<str1.length; j++){
+      let char1=str1.charAt(j);
+      char1=char1.toLowerCase();
+      if(char1==char2){
+        contains=true;
+        break;
+      }
+    }
+    if(!contains){
+      break;
+    }
+  }
+  return contains;
+}
+
+mutation(["hello", "hey"]);
+
+/**
+ * Chunky Monkey
+ */
+ function chunkArrayInGroups(arr, size) {
+  let newArr=[];
+  let arrAux=[];
+  let inx=0;
+  for(let i=0; i<arr.length; i++){
+    if(inx<size){
+      arrAux.push(arr[i]);  
+    }
+    inx++;
+    if(inx==size){
+      newArr.push(arrAux);
+      inx=0;
+      arrAux=[];
+    }
+    //console.log(arrAux);
+  }
+  if(arrAux.length>0){
+    newArr.push(arrAux);
+  }
+  //console.log(newArr);
+  return newArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
