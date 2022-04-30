@@ -130,3 +130,84 @@ reverseString("hello");
   }
   
   truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+  /**
+   * Finders Keepers
+   */
+   function findElement(arr, func) {
+    let num = undefined;
+    for(let i=0; i<arr.length; i++){
+      if(func(arr[i])){
+        num=arr[i];
+        break;
+      }
+    }
+    return num;
+  }
+  
+  findElement([1, 2, 3, 4], num => num % 2 === 0);
+
+  /**
+   * Boo who
+   */
+   function booWho(bool) {
+  
+    if(bool===true || bool===false){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  
+  booWho(null);
+
+  /**
+   * Title Case a Sentence
+   */
+   function titleCase(str) {
+    str=str.toLowerCase();
+    let newStr="";
+    let inicial=str.charAt(0);
+    inicial=inicial.toUpperCase();
+    newStr=newStr+inicial;
+    let indxSpace=0;
+    for(let i=1; i<str.length; i++){
+      if(str.charAt(i)===' '){
+        indxSpace=i;
+      }
+      inicial=str.charAt(i);
+      if(indxSpace!=0){
+        if(indxSpace==(i-1)){
+          inicial=inicial.toUpperCase();
+        }
+      }
+      newStr=newStr+inicial;
+    }
+    console.log(newStr);
+    return newStr;
+  }
+  
+  titleCase("I'm a little tea pot");
+
+  /**
+   * Slice and Splice
+   */
+   function frankenSplice(arr1, arr2, n) {
+    let newArr=arr2.slice(0,n);
+    newArr.push(...arr1);
+    //console.log(arr2.slice(n,arr2.length));
+    newArr.push(...arr2.slice(n,arr2.length))
+    //console.log(newArr);
+    return newArr;
+  }
+  
+  frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2);
+
+  /**
+   * Falsy Bouncer
+   */
+function bouncer(arr) {  
+   return arr.filter(Boolean);
+}
+bouncer([false, null, 0, NaN, undefined, ""]);
