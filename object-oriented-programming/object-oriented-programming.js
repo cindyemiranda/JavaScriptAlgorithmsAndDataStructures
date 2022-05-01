@@ -171,3 +171,135 @@ function Dog() {
     }
   
   };
+
+  /**
+   * Remember to Set the Constructor Property when Changing the Prototype
+   */
+   function Dog(name) {
+    this.name = name;
+  }
+  
+  // Only change code below this line
+  Dog.prototype = {
+    constructor: Dog,
+    numLegs: 4,
+    eat: function() {
+      console.log("nom nom nom");
+    },
+    describe: function() {
+      console.log("My name is " + this.name);
+    }
+  };
+
+  /**
+   * Understand Where an Object’s Prototype Comes From
+   */
+   function Dog(name) {
+    this.name = name;
+  }
+  
+  let beagle2 = new Dog("Snoopy");
+  
+  // Only change code below this line
+  Dog.prototype.isPrototypeOf(beagle2);
+
+  /**
+   * Understand the Prototype Chain
+   */
+   function Dog(name) {
+    this.name = name;
+  }
+  
+  let beagle3 = new Dog("Snoopy");
+  
+  Dog.prototype.isPrototypeOf(beagle3);  // yields true
+  
+  // Fix the code below so that it evaluates to true
+  Object.prototype.isPrototypeOf(Dog.prototype);
+
+/**
+ * Use Inheritance So You Don't Repeat Yourself
+ */
+
+ function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+  
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+  
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+/**
+ * Inherit Behaviors from a Supertype
+ */
+
+ function Animal() { }
+
+ Animal.prototype = {
+   constructor: Animal,
+   eat: function() {
+     console.log("nom nom nom");
+   }
+ };
+ 
+ // Only change code below this line
+ 
+ let duck=Object.create(Animal.prototype); // Change this line
+ let beagle4=Object.create(Animal.prototype); // Change this line
+
+ /**
+  * Set the Child's Prototype to an Instance of the Parent
+  */
+  function Animal() { }
+
+  Animal.prototype = {
+    constructor: Animal,
+    eat: function() {
+      console.log("nom nom nom");
+    }
+  };
+  
+  function Dog() { }
+  Dog.prototype=Object.create(Animal.prototype);
+  // Only change code below this line
+  
+  
+  let beagle5 = new Dog();
+
+/**
+ * Reset an Inherited Constructor Property
+ */
+ function Animal() { }
+ function Bird() { }
+ function Dog() { }
+ 
+ Bird.prototype = Object.create(Animal.prototype);
+ Dog.prototype = Object.create(Animal.prototype);
+ 
+ // Only change code below this line
+ Bird.prototype.constructor= Bird;
+ Dog.prototype.constructor=Dog;
+ 
+ 
+ let duck1 = new Bird();
+ let beagle6 = new Dog();
+
