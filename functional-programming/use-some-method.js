@@ -5,7 +5,7 @@
  function checkPositive(arr) {
     // Only change code below this line
      const positive=arr.some(function(value){
-       return positive>=0;
+       return value>=0;
      }); 
     return positive;
     // Only change code above this line
